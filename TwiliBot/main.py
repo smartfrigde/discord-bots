@@ -56,12 +56,7 @@ async def help(ctx):
    embed.add_field (name=",ban", value=f"ban command yo!")
    embed.add_field (name=",kick", value=f"kick command yo!")
    embed.add_field (name=",info", value=f"shows info about server")
-   embed.add_field (name=",todo", value=f"todo list for bot")
-   embed.add_field (name=",botinfo", value=f"bot info command buh")
    embed.add_field (name=",ping", value=f"pong")
-   embed.add_field (name=",support", value=f"sends support contact for bot")
-   embed.add_field (name=",patchnotes", value=f"sends patch notes buh")
-   embed.add_field (name=",version", value=f"sends version info buh!")
    # embed.set_thumbnail(url=f"{ctx.guild.icon}")
    embed.set_thumbnail (url="https://www.meme-arsenal.com/memes/67e08d6a1a2722aca68e9fa62c0fec55.jpg")
 
@@ -79,12 +74,6 @@ async def ping(ctx):
     await ctx.send ('Pong!')
 
 
-# downloads patch notes from website using urllib module
-@bot.command (brief="Sends patch notes to command author.", description='Sends patch notes to command author.')
-async def patchnotes(ctx):
-    await ctx.send ('Patch notes were send to command author <:heheboi:719173324466290698>')
-    for line in urllib.request.urlopen ("https://twilipl.neocities.org/twilibot/patchnotes.txt"):
-        await ctx.author.send (line.decode ('utf-8'))
 
 
 # simple + commmand
@@ -144,34 +133,11 @@ async def vibecheck(ctx):
         await ctx.send (embed=embed)
 
 
-# downloads current version info from website using urllib module
-@bot.command (brief="Shows current version of bot!", description='Shows current version of bot!')
-async def version(ctx):
-    for line in urllib.request.urlopen ("https://twilipl.neocities.org/twilibot/version.txt"):
-        await ctx.send (line.decode ('utf-8'))
-
-
 # f command
 @bot.command (brief="F command", description='F command')
 async def payrespect(ctx):
     await ctx.send (file=discord.File ('f.jpg'))
     await ctx.send ('**Press F to pay respects!**')
-
-
-# bot info command with history
-@bot.command (brief="Shows info about author of this bot", description='Shows info about author of this bot.')
-async def botinfo(ctx):
-    embed = discord.Embed (title=f"CursedBot Team 2020", description="Bot Info",
-                           timestamp=datetime.datetime.utcnow (), color=discord.Color.blue ())
-    embed.add_field (name="Creator of this bot:", value="TwiliPL aka smartfrigde")
-    embed.add_field (name="Special thanks to:", value="Dej,discord.py discord, discord bot maker discord, Urakuk.")
-    embed.add_field (name="Little name history:",
-                     value="At first bot was named TwiliBot then we decided to rename it to CursedBot buh")
-    embed.add_field (name="Date of creation:", value="20.11.2018")
-    # embed.set_thumbnail(url=f"{ctx.guild.icon}")
-    embed.set_thumbnail (url="https://i.ya-webdesign.com/images/cartoon-book-png-6.png")
-
-    await ctx.send (embed=embed)
 
 
 # swag command
@@ -280,12 +246,6 @@ async def allah(ctx):
     embed.set_thumbnail (url="https://twilipl.neocities.org/twilibot/images/allahmeme.jpg")
 
     await ctx.send (embed=embed)
-
-
-# ping command used to check is bot responding
-@bot.command (pass_context=True, brief="Sends support server link.", description='Sends support server link.')
-async def support(ctx):
-    await ctx.send ('**Contact this person smartfrigde#5834 **')
 
 
 # reddit r/dankmemes
