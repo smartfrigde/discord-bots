@@ -21,4 +21,4 @@ Just make issue here on github!
 
  5.Any contact with you?
  
- **- if you really need support or have questions feel free to dm me on github or discord (smartfridge#5834)
+ **- if you really need support or have questions feel free to dm me on github or discord (smartfridge#5834)**
